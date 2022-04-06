@@ -11,11 +11,13 @@ import SwiftUI
 
 struct Arc: Shape {
 
-    // Variable
+    // Variables
 
     var startAngle: Angle = .radians(0)
     var endAngle: Angle = .radians(Double.pi * 2)
     var clockWise: Bool = true
+
+    // Functions
 
     func path(in rect: CGRect) -> Path {
         var path = Path()

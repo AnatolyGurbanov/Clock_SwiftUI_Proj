@@ -9,8 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            Arc(
+                startAngle: .radians(0),
+                endAngle: .radians(Double.pi * 2),
+                clockWise: true
+            )
+            .stroke(lineWidth: 3)
+            Ticks()
+        }
+        .frame(width: 200, height: 200, alignment: .center)
     }
 }
 
