@@ -17,6 +17,25 @@ struct ContentView: View {
             )
             .stroke(lineWidth: 3)
             Ticks()
+            Numbers()
+            Circle()
+                .fill()
+                .frame(width: 15, height: 15, alignment: .center)
+            /// Часовая стрелка
+            Hand(offset: 10)
+                .fill()
+                .frame(width: 4, alignment: .center)
+            /// Минутная стрелка
+            Hand(offset: 10)
+                .fill()
+                .frame(width: 3, alignment: .center)
+            /// Секундная стрелка
+            Hand(offset: 5)
+                .foregroundColor(.red)
+                .frame(width: 2, alignment: .center)
+            Circle()
+                .foregroundColor(.red)
+                .frame(width: 7, height: 7, alignment: .center)
         }
         .frame(width: 200, height: 200, alignment: .center)
     }

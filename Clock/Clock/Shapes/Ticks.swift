@@ -13,9 +13,13 @@ struct Ticks: View {
     var body: some View {
         ZStack {
             ForEach(0..<60) { position in
-                Tick()
+                Tick(isLong: position % 5 == 0)
                     .stroke(lineWidth: 2)
-                    .rotationEffect(.radians(Double.pi*2 / 60 * Double(position)))
+                    .rotationEffect(
+                        .radians(
+                            Double.pi * 2 / 60 * Double(position)
+                        )
+                    )
             }
         }
     }

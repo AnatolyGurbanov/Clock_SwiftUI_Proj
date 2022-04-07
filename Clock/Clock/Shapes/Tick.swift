@@ -10,11 +10,13 @@ import SwiftUI
 // MARK: - Ticks shape
 
 struct Tick: Shape {
+    var isLong: Bool = false
+
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
         path.move(to: CGPoint(x: rect.midX, y: rect.minY))
-        path.addLine(to: CGPoint(x: rect.midX, y: rect.minY + 5))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.minY + 5 + (isLong ? 5 : 0)))
 
         return path
     }
